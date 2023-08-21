@@ -43,6 +43,9 @@ spec:
         volumeMounts:
         - name: timezone
           mountPath: /etc/localtime
+      {{if .EnvSecret}}envFrom:
+      - secretRef:
+        name: {{.EnvSecret}}
       {{if .Secret}}imagePullSecrets:
       - name: {{.Secret}}
       {{end}}volumes:
