@@ -46,7 +46,7 @@ spec:
       {{if .EnvSecret}}envFrom:
       - secretRef:
         name: {{.EnvSecret}}
-      {{if .Secret}}imagePullSecrets:
+      {{end}}{{if .Secret}}imagePullSecrets:
       - name: {{.Secret}}
       {{end}}volumes:
         - name: timezone
