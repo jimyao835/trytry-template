@@ -45,7 +45,7 @@ spec:
           mountPath: /etc/localtime
         envFrom:
         - secretRef:
-            name: {{.EnvSecret}}
+            name: log-secret
       {{if .Secret}}imagePullSecrets:
       - name: {{.Secret}}
       {{end}}volumes:
